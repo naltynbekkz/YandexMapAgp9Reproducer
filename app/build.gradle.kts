@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.yandexmapagp9reproducer"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -22,6 +22,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = true
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -55,4 +58,7 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation("com.yandex.android:maps.mobile:4.30.0-lite")
+//    implementation("androidx.work:work-runtime:2.11.1")
 }
